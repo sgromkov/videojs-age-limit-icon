@@ -1,8 +1,7 @@
 import videojs from 'video.js';
-import {version as VERSION} from '../package.json';
-
-// Default options for the plugin.
-const defaults = {};
+import { version as VERSION } from '../package.json';
+import defaults from './defaults';
+import AgeLimiter from './age-limiter';
 
 // Cross-compatibility for Video.js 5 and 6.
 const registerPlugin = videojs.registerPlugin || videojs.plugin;
@@ -23,7 +22,19 @@ const registerPlugin = videojs.registerPlugin || videojs.plugin;
  *           A plain object containing options for the plugin.
  */
 const onPlayerReady = (player, options) => {
+  videojs.log('ageLimitIcon Plugin ENABLED!', options);
+
+  const limit = parseInt(options.limit, 10);
+
+  if (!isFinite(limit)) {
+    throw new TypeError(`Incorrect age limit: limit is ${limit}`);
+  }
+
   player.addClass('vjs-age-limit-icon');
+
+  const ageLimiter = new AgeLimiter(player, options);
+
+  ageLimiter.init();
 };
 
 /**

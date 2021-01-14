@@ -9,32 +9,36 @@
  *   https://www.w3.org/TR/css-variables-1/
  */
 
+.video-js.vjs-age-limit-icon .vjs-age-limit-icon-block {
+  position: absolute;
+  left: 18px;
+  top: 14px;
 
-/* Note: all vars must be defined here, there are no "local" vars */
-:root {
-  --main-color: red;
-  --base-font-size: 9;
-  --font-size: 7;
+  width: 28px;
+  height: 24px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
-.video-js {
+.video-js.vjs-age-limit-icon .vjs-age-limit-icon-block span {
+  font-size: 15px;
+  line-height: 18px;
+  color: #d1d1d1;
+}
 
-  &.vjs-age-limit-icon {
-    /* This class is added to the video.js element by the plugin by default. */
-    display: block;
+.video-js.vjs-age-limit-icon .vjs-age-limit-icon-block_content_adult:before {
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  transform: translate(0, -50%);
 
-    & .remove-me, & .remove-me-too, &.finally-remove-me {
-      /* examples of postcss syntax, you probably want to remove this */
+  width: 2px;
+  height: 100%;
 
-      color: var(--main-color);
-
-      /**
-       * Note that you have to use calc and multiply by a value with a unit
-       * prepending the unit like `var(--base-font-size)px` or
-       * `calc(10 * var(--base-font-size)em` will NOT work!
-       */
-      font-size: calc(var(--font-size) * 8 * var(--base-font-size) * 1px);
-
-    }
-  }
+  background-color: #e64025;
+  content: '';
 }

@@ -13,14 +13,17 @@
   </video>
   <ul>
     <li><a href="/test/debug.html">Run unit tests in browser.</a></li>
-    
+
   </ul>
   <script src="node_modules/video.js/dist/video.js"></script>
   <script src="dist/videojs-age-limit-icon.js"></script>
   <script>
     (function(window, videojs) {
       var examplePlayer = window.examplePlayer = videojs('videojs-age-limit-icon-player');
-      var ageLimitIcon = window.ageLimitIcon = examplePlayer.ageLimitIcon();
+      var ageLimitIcon = window.ageLimitIcon = examplePlayer.ageLimitIcon({
+        limit: 18,
+        duration: 0
+      });
     }(window, window.videojs));
   </script>
 </body>

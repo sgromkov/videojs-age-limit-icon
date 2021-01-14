@@ -22,7 +22,10 @@ This is the simplest case. Get the script in whatever way you prefer and include
 <script>
   var player = videojs('my-video');
 
-  player.ageLimitIcon();
+  player.ageLimitIcon({
+    limit: 18,
+    duration: 0
+  });
 </script>
 ```
 
@@ -40,7 +43,10 @@ require('videojs-age-limit-icon');
 
 var player = videojs('my-video');
 
-player.ageLimitIcon();
+player.ageLimitIcon({
+  limit: 18,
+  duration: 0
+});
 ```
 
 ### RequireJS/AMD
@@ -51,7 +57,10 @@ When using with RequireJS (or another AMD library), get the script in whatever w
 require(['video.js', 'videojs-age-limit-icon'], function(videojs) {
   var player = videojs('my-video');
 
-  player.ageLimitIcon();
+  player.ageLimitIcon({
+    limit: 18,
+    duration: 0
+  });
 });
 ```
 

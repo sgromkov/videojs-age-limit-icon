@@ -1,6 +1,6 @@
 {
   "name": "videojs-age-limit-icon",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A Video.js plugin for displaying age limit icon over the video",
   "main": "dist/videojs-age-limit-icon.cjs.js",
   "module": "dist/videojs-age-limit-icon.es.js",
@@ -78,5 +78,16 @@
     "videojs-generate-rollup-config": "~3.1.0",
     "videojs-generator-verify": "~1.2.0",
     "videojs-standard": "^8.0.3"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sgromkov/videojs-age-limit-icon.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sgromkov/videojs-age-limit-icon/issues"
+  },
+  "homepage": "https://github.com/sgromkov/videojs-age-limit-icon#readme"
 }
